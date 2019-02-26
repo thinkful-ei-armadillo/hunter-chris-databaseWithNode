@@ -33,3 +33,33 @@ function allPaginated(pageNumber){
 
 // allPaginated(2);
 // allPaginated(1);
+
+function afterDate(daysAgo){
+  knexInstance
+    .select('*')
+    .count('date_added AS days')
+    .where(
+      'date_added',
+      '>',
+      knexInstance.raw(`now() - '?? days'::INTERVAL`, daysAgo))
+    .from('shopping_list')
+    .groupBy('name', 'shopping_list.id')
+    .then(result =>{
+      console.log(result); 
+    });
+}
+
+// afterDate(2);
+
+function totalCost(){
+  knexInstance
+    .select('category')
+    .count('price as total')
+    .from('shopping_list')
+    .groupBy('category')
+    .then(result =>{
+      console.log(result); 
+    });
+}
+
+totalCost();
