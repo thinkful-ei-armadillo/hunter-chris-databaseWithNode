@@ -17,7 +17,7 @@ function retrievingSearchTerm (searchTerm) {
     });
 }
 
-retrievingSearchTerm('tofurkey');
+// retrievingSearchTerm('tofurkey');
 
 
 function allPaginated(pageNumber){
@@ -31,5 +31,5 @@ function allPaginated(pageNumber){
     });
 }
 
-allPaginated(2);
-allPaginated(1); 
+// allPaginated(2);
+// allPaginated(1);
