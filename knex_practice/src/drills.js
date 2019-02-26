@@ -18,3 +18,18 @@ function retrievingSearchTerm (searchTerm) {
 }
 
 retrievingSearchTerm('tofurkey');
+
+
+function allPaginated(pageNumber){
+  knexInstance
+    .select('*')
+    .from('shopping_list')
+    .limit(6)
+    .offset((pageNumber - 1) * 6)
+    .then(result =>{
+      console.log(result); 
+    });
+}
+
+allPaginated(2);
+allPaginated(1); 
