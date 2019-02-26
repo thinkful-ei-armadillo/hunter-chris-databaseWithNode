@@ -49,7 +49,7 @@ function afterDate(daysAgo){
     });
 }
 
-// afterDate(2);
+// afterDate(1);
 
 function totalCost(){
   knexInstance
